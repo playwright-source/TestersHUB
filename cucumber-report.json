@@ -1,0 +1,74 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "corporate-gear-website-login;user-logs-in-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "User logs in with valid credentials",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user navigates to the Corporate Gear website",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the user clicks on the \"Login\" button",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "the user enters their email and password",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the user clicks on the \"SIGN IN\" button",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the user should be redirected to the landing home page",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "corporate-gear-website-login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Corporate Gear Website Login",
+    "tags": [],
+    "uri": "features\\corporategear-login.feature"
+  }
+]
