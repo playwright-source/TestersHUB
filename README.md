@@ -4,10 +4,16 @@ Sample CorporateGear code repo build with cucumber-js + playwright
 This repository provides a test automation framework that combines Playwright for end-to-end testing with Cucumber for behavior-driven development (BDD) in JavaScript. The setup allows for clear test scenarios written in Gherkin syntax and is designed to be flexible, scalable, and compatible with modern web applications
 
 Table of Contents
+
 Features
+
 Project Structure
+
 Setup and Installation
+
+
 Running Tests
+
 License
 Features
 End-to-End Testing: Automated UI testing for web applications using * * Playwright.
