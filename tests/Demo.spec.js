@@ -15,4 +15,5 @@ test.only('Firts test', async ({browser})=>
   await page.fill('input[name="password"]', 'Test@123');
   const signInButton = page.locator('button:has-text("SIGN IN")');
   await signInButton.click();
+  await signInButton.click();;;;;;;
 });
