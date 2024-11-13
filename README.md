@@ -16,11 +16,11 @@ Running Tests
 
 License
 Features
-End-to-End Testing: Automated UI testing for web applications using * * Playwright.
-BDD Style: Cucumber enables tests to be written in plain language using the Gherkin syntax.
-TypeScript: Type-safe code with support for modern JavaScript features.
-Cross-Browser Testing: Run tests across Chromium, Firefox, and WebKit browsers.
-Report Generation: Generates reports for test results.
-Project Structure
-The core directories and files are organized as follows:
+End-to-End Testing: Automated UI testing for web applications using * * Playwright. 
+BDD Style: Cucumber enables tests to be written in plain language using the Gherkin syntax. 
+
+Cross-Browser Testing: Run tests across Chromium, Firefox, and WebKit browsers. 
+Report Generation: Generates reports for test results. 
+Project Structure 
+The core directories and files are organized as follows: 
 
