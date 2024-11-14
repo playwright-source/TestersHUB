@@ -25,12 +25,9 @@ Then('the user should be redirected to the landing home page', async function ()
     await this.home.verifyLandingPage();
 });
 
-// Scenario 02: Invalid Email and Password
-// When('the user enters an invalid email and password', async function () {
-//     await this.home.invalidEmailPwd(); 
-// });
+// Step 5: Verify landing on the brand page
+When('the user clicks on the "Discover Our Brands" button', async function () {
+    await this.home.discoverOurBrands();
+});
 
-Then ('the user enters an invalid email and password', async function () {
-    // Write code here that turns the phrase above into concrete actions
-    await this.home.invalidEmailPwd(); 
-  });
+
