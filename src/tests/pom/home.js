@@ -28,6 +28,7 @@ class Home {
        
     }
 
+
     async verifyLandingPage(){
         await expect(this.page.locator('a[title="My Account"]')).toBeVisible(); 
     }
@@ -36,6 +37,13 @@ class Home {
         this.discoverOurBrands = await this.page.locator('//*[@id="div1"]/section/div/div/div/div/div/div[1]/div/div/div/div/div/div[3]/a/span');
         await this.discoverOurBrands.click();
     }
+
+
+    async discoverOurBrands(){
+        this.discoverOurBrands = await this.page.locator('//*[@id="div1"]/section/div/div/div/div/div/div[1]/div/div/div/div/div/div[3]/a/span');
+        await this.discoverOurBrands.click();
+    }
+
 
     /*async invalidError(expectedMessage) {
         // Locate the error message element with specified text
