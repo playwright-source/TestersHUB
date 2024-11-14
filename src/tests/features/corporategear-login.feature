@@ -12,4 +12,3 @@ Scenario: Verify user can able to search an item
    When User searcn an item 'bag'
    Then User should see result for 'bag'
 
-    
