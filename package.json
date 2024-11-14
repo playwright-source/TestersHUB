@@ -1,11 +1,13 @@
 {
-  "name": "playwright",
+  "name": "playwright-cucumber-js",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:cucumber": "npx cucumber-js --require cucumber.conf.js --require ./tests/step-definitions/**/*.js ./tests/**/*.feature"
+    "test:cucumber": "npx cucumber-js --require cucumber.conf.js --require ./tests/step-definitions/**/*.js ./tests/**/*.feature",
+    "test": " npx cucumber-js test"
   },
-  "keywords": [],
+  "type": "commonjs",
+  "keywords": ["playwright", "javascript", "cucumber"],
   "author": "",
   "license": "ISC",
   "description": "",
@@ -15,6 +17,7 @@
     "@types/node": "^22.9.0"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "reflect-metadata": "^0.2.2"
   }
 }
