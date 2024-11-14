@@ -28,7 +28,10 @@ class Home {
         await expect(this.page).toHaveURL(/www.corporategear/); 
     }
 
-    
+    async invalidEmailPwd(){
+        await this.page.fill('input[name="email"]', 'invalid user');
+        await this.page.fill('input[name="password"]', 'invalid');
+    }
 }
 
 module.exports = Home
