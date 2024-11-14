@@ -7,5 +7,4 @@ Scenario: User browses brands and adds product to cart
     When the user clicks on the "SIGN IN" button
     Then the user should be redirected to the landing home page
     When the user clicks on the "Discover Our Brands" button
-    When the user clicks on the "Discover Our Brands" button
     
