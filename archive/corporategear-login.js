@@ -3,7 +3,7 @@ const { expect } = require('@playwright/test');
 const { chromium } = require('playwright');
 
 Before(async function () {
-  this.browser = await chromium.launch({ headless: false });  // Launching the browser
+  this.browser = await chromium.launch();  // Launching the browser
   this.context = await this.browser.newContext(); // Creating a new context
   this.page = await this.context.newPage(); // Creating a new page
 });
@@ -15,7 +15,7 @@ After(async function () {
 
 // Step 1: Navigate to Corporate Gear website
 Given('the user navigates to the Corporate Gear website', async function () {
-    await this.page.goto('https://www.corporategear.com/');
+  await this.page.goto('https://www.corporategear.com/');
   console.log(await this.page.title());
 });
 
@@ -40,5 +40,5 @@ When('the user clicks on the "SIGN IN" button', async function () {
 // Step 5: Verify landing on the home page
 Then('the user should be redirected to the landing home page', async function () {
   // Update the URL check
-  await expect(this.page).toHaveURL("https://www.corporategear.com/");  
+  await expect(this.page).toHaveURL("https://www.corporategear.com/");  // Consider improving this URL check
 });

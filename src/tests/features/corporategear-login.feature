@@ -1,15 +1,18 @@
-Feature: Corporate Gear Website Login
-
-  Scenario: User logs in with valid credentials
-    Given the user navigates to the Corporate Gear website
-    When the user clicks on the "Login" button
-    And the user enters their email and password
-    And the user clicks on the "SIGN IN" button
+Feature: Corporate Gear Website Add To Cart Flow
+@signup
+Scenario: User browses brands and adds product to cart
+    Given User launches the website
+    When  Login with username as 'cypresstest28@gmail.com' and password as 'Test@123'
     Then the user should be redirected to the landing home page
+   # When the user clicks on the "Login" button
+    #When the user enters their email and password
+    #When the user clicks on the "SIGN IN" button
+   # When the user clicks on the "Discover Our Brands" button
 
-  Scenario: User logs in with invalid credentials
-    Given the user navigates to the Corporate Gear website
-    When the user clicks on the "Login" button
-    Then the user enters an invalid email and password
-    And the user clicks on the "SIGN IN" button
-    Then an error message "Username and password invalid" should be displayed
+@search
+Scenario: Verify user can able to search an item
+   Given User launches the website
+   When User searcn an item 'bag'
+   Then User should see result for 'bag'
+  
+    

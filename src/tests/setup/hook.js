@@ -1,17 +1,19 @@
 
-const { setDefaultTimeout, Before, After, Status  } = require('@cucumber/cucumber')
+const { setDefaultTimeout, Before, After, Status, setWorldConstructor  } = require('@cucumber/cucumber')
 const { chromium } = require('@playwright/test')
-const Home  = require('./../pom/home')
+
+const CustomWorld = require('./../setup/custom.world')
 
 require('dotenv').config()
 
+setWorldConstructor(CustomWorld)
 setDefaultTimeout(60 * 1000 * 2)
 
 Before(async function () {
     this.browser = await chromium.launch({ headless: false });  // Launching the browser
     this.context = await this.browser.newContext(); // Creating a new context
     this.page = await this.context.newPage(); // Creating a new page
-    this.home = new Home(this.page)
+    await this.initSetUp(this.page)
   });
   
 After(async function ({ result, pickle }) {
