@@ -5,6 +5,7 @@
             "snippetInterface" : "async-await" 
         },
         "dryRun" : false,
+        "tags" : "",
         "require" : ["src/tests/stepdef/*.js", "src/tests/setup/hook.js"],
         "format" : [
             "html:test-results/cucumber-report.html",

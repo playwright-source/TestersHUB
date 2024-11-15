@@ -1,9 +1,13 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 // Step 1: Navigate to Corporate Gear website
-Given('the user navigates to the Corporate Gear website', async function () {
+Given('User launches the website', async function () {
     await this.home.loadHomePage();
 });
+
+When('Login with username as {string} and password as {string}', async function (username, password) {
+    await this.home.enterUserNameandPwd(username, password)
+  });
 
 // Step 2: Click on the Login button
 When('the user clicks on the "Login" button', async function () {
