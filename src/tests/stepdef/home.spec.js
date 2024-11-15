@@ -1,9 +1,13 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 // Step 1: Navigate to Corporate Gear website
-Given('the user navigates to the Corporate Gear website', async function () {
+Given('User launches the website', async function () {
     await this.home.loadHomePage();
 });
+
+When('Login with username as {string} and password as {string}', async function (username, password) {
+    await this.home.enterUserNameandPwd(username, password)
+  });
 
 // Step 2: Click on the Login button
 When('the user clicks on the "Login" button', async function () {
@@ -25,12 +29,9 @@ Then('the user should be redirected to the landing home page', async function ()
     await this.home.verifyLandingPage();
 });
 
-// Scenario 02: Invalid Email and Password
-// When('the user enters an invalid email and password', async function () {
-//     await this.home.invalidEmailPwd(); 
-// });
+// Step 5: Verify landing on the brand page
+When('the user clicks on the "Discover Our Brands" button', async function () {
+    await this.home.discoverOurBrands();
+});
 
-Then ('the user enters an invalid email and password', async function () {
-    // Write code here that turns the phrase above into concrete actions
-    await this.home.invalidEmailPwd(); 
-  });
+
