@@ -29,9 +29,24 @@ Then('the user should be redirected to the landing home page', async function ()
     await this.home.verifyLandingPage();
 });
 
-// Step 5: Verify landing on the brand page
+// Step 5: user clicks on the "Discover Our Brands" button
 When('the user clicks on the "Discover Our Brands" button', async function () {
     await this.home.discoverOurBrands();
 });
+
+// Step 5: the user selects the "Peter Millar" brand
+When('the user selects the "Peter Millar" brand', async function () {
+    await this.home.clickOnFirstBrand();
+});
+
+/*When('the user selects the "Peter Millar Mens Iron Fade Half Zip" product', async function () {
+    await this.home.clickOnIronFade();
+});*/
+
+
+
+
+
+
 
 

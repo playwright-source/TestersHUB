@@ -1,5 +1,6 @@
 Feature: Corporate Gear Website Add To Cart Flow
-@signup
+
+@AddToCart
 Scenario: User browses brands and adds product to cart
     Given User launches the website
     When  Login with username as 'cypresstest28@gmail.com' and password as 'Test@123'

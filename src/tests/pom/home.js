@@ -38,20 +38,19 @@ class Home {
         this.discoverOurBrands = await this.page.locator('//*[@id="div1"]/section/div/div/div/div/div/div[1]/div/div/div/div/div/div[3]/a/span');
         await this.discoverOurBrands.click();
     }
-
-
-
-    /*async invalidError(expectedMessage) {
-        // Locate the error message element with specified text
-        const errorMessage = await page.locator('.mb-4.text-center', { hasText: 'User name and password invalid.' });
     
-        // Get the actual text content of the error message element
-        const actualMessage = await errorMessage.textContent();
-    
-        // Assert that the actual message matches the expected message
-        expect(actualMessage.trim()).toBe(expectedMessage);
+    async clickOnFirstBrand(){
+        this.clickOnFirstBrand = await this.page.locator('#multipleBrands > div:nth-child(1) > div > div > a > img');
+        await this.clickOnFirstBrand.click();
+    }
+
+    /*async clickOnIronFade(page){
+        //const productLink = page.locator('a[title="Peter Millar Men\'s Iron Fade Half-Zip"][href="/peter-millar-fade-half-zip-iron-men-mf24ez28.html"]');
+        // Wait for the first element to be visible
+        const button = await page.getByRole('link', { name: "Peter Millar Men's Iron Fade Half-Zip" }); 
+        await button.first().waitFor({ state: 'visible', timeout: 20000 });
+        await button.first().click();
     }*/
-
 
 }
 
