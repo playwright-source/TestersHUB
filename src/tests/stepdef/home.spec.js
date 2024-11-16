@@ -1,47 +1,50 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
-// Step 1: Navigate to Corporate Gear website
+// Step 01: Navigate to Corporate Gear website
 Given('User launches the website', async function () {
     await this.home.loadHomePage();
 });
 
+// Step 02: User Logs in with valid credentials
 When('Login with username as {string} and password as {string}', async function (username, password) {
     await this.home.enterUserNameandPwd(username, password)
   });
 
-// Step 2: Click on the Login button
-When('the user clicks on the "Login" button', async function () {
-    await this.home.clickLogin();
-});
-
-// Step 3: Enter email and password
-When('the user enters their email and password', async function () {
-    await this.home.enterUserNameandPwd();
-});
-
-// Step 4: Click on the SIGN IN button
-When('the user clicks on the "SIGN IN" button', async function () {
-    await this.home.clickSignIn();
-});
-
-// Step 5: Verify landing on the home page
+// Step 03: User navigate to home page
 Then('the user should be redirected to the landing home page', async function () {
     await this.home.verifyLandingPage();
 });
 
-// Step 5: user clicks on the "Discover Our Brands" button
-When('the user clicks on the "Discover Our Brands" button', async function () {
+// Step 04: user clicks on the "Discover Our Brands" button
+When('the user clicks on "Discover Our Brands"', async function () {
     await this.home.discoverOurBrands();
 });
 
-// Step 5: the user selects the "Peter Millar" brand
-When('the user selects the "Peter Millar" brand', async function () {
-    await this.home.clickOnFirstBrand();
+// Step 05: Navigate to Peter Millar brand page
+When('the user navigates to the {string} brand page', async function (name) {
+    await this.home.navigateToPeterMillarBrand(name);
 });
 
-/*When('the user selects the "Peter Millar Mens Iron Fade Half Zip" product', async function () {
-    await this.home.clickOnIronFade();
-});*/
+// Step 06: Click on a specific product
+When('the user clicks on the {string} product', async function (name) {
+    await this.home.clickOnProduct(name);
+});
+
+// Step 07: Click on the Start Order button
+When('the user clicks on the "START ORDER" button', async function () {
+    await this.home.clickStartOrder();
+});
+
+// Step 08 and Step 08: select the product sizes
+Then('select the SIZE {string} with QTY {string}', async function (size, qty) {
+    await this.home.selectProductSize(size, qty);
+});
+
+// Step 10: clicks the add to cart button
+Then('the user clicks the add to cart button', async function () {
+    const addToCartButton = this.page.locator('button:has-text("ADD TO CART")');
+    await addToCartButton.click();
+});
 
 
 

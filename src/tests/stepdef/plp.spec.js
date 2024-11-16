@@ -1,6 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
-When('User searcn an item {string}', async function (item) {
+When('User search an item {string}', async function (item) {
     await this.plp.searchItem(item)
   });
 
