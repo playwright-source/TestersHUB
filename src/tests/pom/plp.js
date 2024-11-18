@@ -26,6 +26,28 @@ class PLP {
        
        
     }
+    async clickStartOrder() {
+        const startOrderButton = this.page.locator("//button[contains(@class, 'btn-xl') and contains(@class, 'btn-primary') and text()='START ORDER']");
+        await startOrderButton.waitFor({ state: 'visible', timeout: 50000 });
+        await startOrderButton.click();
+    }
+
+    async navigateToBrand(brand){
+        this.brand =  this.page.locator(`//img[contains(@alt,'Custom ${brand}')]`)
+        await this.brand.click()
+        await expect(this.page.getByRole('link', { name: brand })).toBeVisible()
+           
+       }
+
+    async clickOnProduct(name) {
+        const productLink = this.page.locator('a[title="Peter Millar Men\'s Iron Fade Half-Zip"][href="/peter-millar-fade-half-zip-iron-Men-mf24ez28.html"]').first();
+        await productLink.scrollIntoViewIfNeeded();
+        await productLink.evaluate((element) => {
+            element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+        });
+        await productLink.waitFor({ state: 'visible', timeout: 20000 });
+        await productLink.click();
+    }
 }
 
 module.exports = PLP

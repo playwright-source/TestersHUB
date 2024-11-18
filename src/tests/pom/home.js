@@ -28,39 +28,5 @@ class Home {
         await this.discoverOurBrands.click();
     }
     
-    async navigateToPeterMillarBrand() {
-        const peterMillar = this.page.locator('#multipleBrands > div:nth-child(1) > div > div > a > img');
-        await peterMillar.click();
-        const currentURL = await this.page.url();
-        if (currentURL !== 'https://www.corporategear.com/peter-millar.html') {
-        }
-    }
-
-    async clickOnProduct() {
-        const productLink = this.page.locator('a[title="Peter Millar Men\'s Iron Fade Half-Zip"][href="/peter-millar-fade-half-zip-iron-Men-mf24ez28.html"]').first();
-        await productLink.scrollIntoViewIfNeeded();
-        await productLink.evaluate((element) => {
-            element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-        });
-        await productLink.waitFor({ state: 'visible', timeout: 20000 });
-        await productLink.click();
-    }
-
-    async clickStartOrder() {
-        const startOrderButton = this.page.locator("//button[contains(@class, 'btn-xl') and contains(@class, 'btn-primary') and text()='START ORDER']");
-        await startOrderButton.waitFor({ state: 'visible', timeout: 50000 });
-        await startOrderButton.click();
-    }
-
-    async selectProductSize(size, qty) {
-        const sizeDropdown = this.page.locator(`select[name="${size}"]`);
-        await sizeDropdown.selectOption(qty);
-    }
-
-    async clickAddToCart() {
-        const addToCartButton = this.page.locator('button:has-text("ADD TO CART")');
-        await addToCartButton.click();
-    }
-    
 }
 module.exports = Home;
