@@ -1,6 +1,6 @@
-Feature: Corporate Gear Website Add To Cart Flow
+@addtocart
+Feature: Validate all cart to functionality
 
-@signup
 Scenario: User browses brands and adds a product to the cart
     Given User launches the website
     When Login with username as 'cypresstest28@gmail.com' and password as 'Test@123'
@@ -14,8 +14,3 @@ Scenario: User browses brands and adds a product to the cart
     Then the user clicks the add to cart button
 
 
-@search
-Scenario: Verify user can able to search an item
-   Given User launches the website
-   When User search an item 'bag'
-   Then User should see result for 'bag'
