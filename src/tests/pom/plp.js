@@ -33,10 +33,8 @@ class PLP {
     }
 
     async navigateToBrand(brand){
-        this.brand =  this.page.locator(`//img[contains(@alt,'Custom ${brand}')]`)
-        await this.brand.click()
+        this.brand =  this.page.locator(`//img[contains(@alt,'Custom ${brand}')]`).nth(0).click();
         await expect(this.page.getByRole('link', { name: brand })).toBeVisible()
-           
        }
 
     async clickOnProduct(name) {
