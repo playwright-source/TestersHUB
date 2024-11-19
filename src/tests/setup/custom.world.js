@@ -2,11 +2,15 @@ const { World, setWorldConstructor } = require('@cucumber/cucumber')
 const Home  = require('./../pom/home')
 const PLP  = require('./../pom/plp')
 const Cart = require('./../pom/cart')
+const Forgotpwd = require('./../pom/forgotpwd')
+
+
 class CustomWorld extends World {
 
     home = null
     plp = null
     cart = null
+    forgotpwd = null
     constructor(opts) {
         super(opts)
     }
@@ -17,6 +21,7 @@ class CustomWorld extends World {
         this.home = new Home(page)
         this.plp = new PLP(page)
         this.cart = new Cart(page)
+        this.forgotpwd = new Forgotpwd(page)
     }
 
     async popUpHandler(page){
