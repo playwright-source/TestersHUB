@@ -4,10 +4,15 @@
   "main": "index.js",
   "scripts": {
     "test:cucumber": "npx cucumber-js --require cucumber.conf.js --require ./tests/step-definitions/**/*.js ./tests/**/*.feature",
-    "test": " npx cucumber-js test"
+    "test": " npx cucumber-js test",
+    "serve-report": "http-server C:/Users/testb/141124/TestersHUB/test-results/ -p 8080"
   },
   "type": "commonjs",
-  "keywords": ["playwright", "javascript", "cucumber"],
+  "keywords": [
+    "playwright",
+    "javascript",
+    "cucumber"
+  ],
   "author": "",
   "license": "ISC",
   "description": "",
@@ -18,6 +23,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "playwright": "^1.49.0",
     "reflect-metadata": "^0.2.2"
   }
 }
