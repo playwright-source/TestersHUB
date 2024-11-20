@@ -5,7 +5,7 @@ Feature: Validate all Product Listing functionality
 Scenario: Display Products Under Respective Categories
     Given User launches the website
     And User is on the product listing page
-    When User clicks the any Category options
-    Then All products belonging to the selected category are displayed.
+    When User clicks the "T-Shirts" category
+    Then All products belonging to the "T-Shirts" category should be displayed
 
 

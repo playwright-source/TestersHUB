@@ -3,7 +3,7 @@ const Home  = require('./../pom/home')
 const PLP  = require('./../pom/plp')
 const Cart = require('./../pom/cart')
 const Forgotpwd = require('./../pom/forgotpwd')
-
+const Filtersorting = require('./../pom/filtersorting')
 
 class CustomWorld extends World {
 
@@ -11,6 +11,8 @@ class CustomWorld extends World {
     plp = null
     cart = null
     forgotpwd = null
+    filtersorting = null
+
     constructor(opts) {
         super(opts)
     }
@@ -22,6 +24,7 @@ class CustomWorld extends World {
         this.plp = new PLP(page)
         this.cart = new Cart(page)
         this.forgotpwd = new Forgotpwd(page)
+        this.filtersorting = new Filtersorting(page)
     }
 
     async popUpHandler(page){
