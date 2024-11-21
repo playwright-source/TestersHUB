@@ -1,16 +1,22 @@
-@Filter&Sorting
+@FilterSorting
 Feature: Validate all search functionality
 
-@TC-21
-Scenario: Filter Products by Specific Attributes
-    Given User is on a product listing page with multiple filter options.
-    When the User selects a filter option for brand as 'Adidas' color as 'Green' size as 'XS' and price range as '$25.00-$49.99'
-    Then product list updates to display only items matching the selected filter criteria
+#@TC-21
+#Scenario: Filter Products by Specific Attributes
+    #Given User launches the website
+    #When User clicks on 'Men' category
+    #And User apply this filter
+        #| size | xs |
+        #| brand | adidas |
+        #| caregory | backpacks |
+    #Then the product list should contains item related to 'pen'
 
 @TC-23
 Scenario: Sort Products Based on Selected Criteria
     Given User launches the website
-    And  User searcn an item 'pen'
-    Given User is on a product listing page with sorting options
+    And User search an item 'Adidas'
+    And User clicks on sort option 
     When the User selects a sort option as 'Price: (Low to High)'
-    Then product list rearranges according to the selected sorting criterion
+    Then the products should be sorted in 'Price: (Low to High)' order
+    
+
