@@ -10,8 +10,8 @@ Scenario: User browses brands and adds a product to the cart
     When the user navigates to the 'Peter Millar' brand page
     When the user clicks on the 'Peter Millar' product
     When the user clicks on the "START ORDER" button
-    Then select the SIZE 'SM' with QTY '5'
-    Then select the SIZE 'XL' with QTY '7'
+    Then select the SIZE 'MD' with QTY '5'
+    Then select the SIZE 'LG' with QTY '7'
     Then the user clicks the add to cart button
 
 
