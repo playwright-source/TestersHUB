@@ -21,7 +21,7 @@ class PLP {
         if (actualMessage.trim() !== expectedMessage) {
             throw new Error(`Validation failed. Expected: "${expectedMessage}", Actual: "${actualMessage.trim()}"`);
         }
-        console.log('VValidation successful:', actualMessage);
+        console.log('Validation successful:', actualMessage);
     }
     
     async verifyResultCount(){
