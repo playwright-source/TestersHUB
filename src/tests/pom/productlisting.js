@@ -20,5 +20,7 @@ class productListing {
         const pageTitle = await this.page.title();
         return pageTitle.includes(categoryName);
     }
+
+    
 }
 module.exports = productListing;

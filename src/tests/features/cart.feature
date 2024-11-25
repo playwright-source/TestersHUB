@@ -14,4 +14,20 @@ Scenario: User browses brands and adds a product to the cart
     Then select the SIZE 'LG' with QTY '7'
     Then the user clicks the add to cart button
 
+@TC-25
+Scenario: Validate user add to cart the same product multiple times
+Given User launches the website
+And User search an item 'MF24EZ11-NAV'
+And User click on product: '1' in search result
+When the user clicks on the "START ORDER" button
+And select the SIZE 'MD' with QTY '5'
+And select the SIZE 'LG' with QTY '7'
+And  the user clicks the add to cart button
+And User search an item 'MF24EZ11-NAV'
+And User click on product: '1' in search result
+When the user clicks on the "START ORDER" button
+And select the SIZE 'MD' with QTY '5'
+And select the SIZE 'LG' with QTY '7'
+And  the user clicks the add to cart button
+Then the cart should have '24' items
 

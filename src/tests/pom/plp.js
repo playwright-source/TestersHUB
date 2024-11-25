@@ -62,6 +62,14 @@ class PLP {
         await productLink.waitFor({ state: 'visible', timeout: 20000 });
         await productLink.click();
     }
+
+    async clickAnyItem(number){
+
+        const item = this.page.locator(`(//img[@data-nimg="1"])[${number}]`)
+        await item.click()
+       // await expect(this.page.locator('img.iiz__img')).toBeVisible({timeout: 10000})
+       await expect(this.page.getByRole('button', { name : 'START ORDER'})).toBeVisible()
+    }
 }
 
 module.exports = PLP

@@ -8,4 +8,9 @@ Then('the user clicks the add to cart button', async function () {
    await this.cart.clickAddToCart()
 });
 
+Then('the cart should have {string} items', async function (count) {
+    // Write code here that turns the phrase above into concrete actions
+   await this.cart.validateCartCount(count)
+  });
+
 
