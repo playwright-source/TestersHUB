@@ -16,6 +16,12 @@ const { Given, When, Then } = require('@cucumber/cucumber');
     await this.forgotpwd.clickForgotPwdBtn();
   });
 
-  Then("User should see the confirmation message", async function () {
-    await this.forgotpwd.errorAssert();
+  //@TC-11
+
+  When("User 'Change' password", async function () {
+    await this.forgotpwd.passwordChange();
+  });
+
+  Then("User set password to default", async function () {
+    await this.forgotpwd.setPwdToDefault();
   });

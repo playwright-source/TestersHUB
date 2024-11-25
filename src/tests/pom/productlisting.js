@@ -16,7 +16,7 @@ class productListing {
         await categoryLocator.waitFor({ state: 'visible', timeout: 5000 });
         await categoryLocator.click();
     }
-    async verifyPageTitleContainsCategory(categoryName) {
+    async verifyPageTitleContainsCategory(categoryName){
         const pageTitle = await this.page.title();
         return pageTitle.includes(categoryName);
     }

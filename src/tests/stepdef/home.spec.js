@@ -20,6 +20,19 @@ When('the user clicks on "Discover Our Brands"', async function () {
     await this.home.discoverOurBrands();
 });
 
+//@login - @TC-06
+Then('the user see {string} message', async function (expectedMessage) {
+    await this.home.assertErrorMessage(expectedMessage);
+});
+
+//@TC-08
+Then("User clicks on {string} option", async function (options) {
+    await this.home.profileOptions(options);
+});
+
+Then("User redirects to 'Home' page", async function () {
+    await this.home.verifyUserRedirectsToHome();
+  });
 
 
 

@@ -34,9 +34,8 @@ class PLP {
                 this.number = parseInt(result.match(/\d+/)[0], 10);
                 expect(this.number).toBeGreaterThanOrEqual(1)
        })
-       
-       
     }
+
     async clickStartOrder() {
         const startOrderButton = this.page.locator("//button[contains(@class, 'btn-xl') and contains(@class, 'btn-primary') and text()='START ORDER']");
         await startOrderButton.waitFor({ state: 'visible', timeout: 50000 });
