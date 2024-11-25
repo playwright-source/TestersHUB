@@ -19,8 +19,17 @@ class Home {
         await this.signInButton.click();
     }
 
-    async verifyLandingPage(){
-        await expect(this.page.locator('a[title="My Account"]')).toBeVisible(); 
+    async verifyLandingPage() {
+    const accountLink = this.page.locator('//div[contains(@class, "flex") and contains(@class, "relative")]//a[@title="My Account" and contains(@class, "text-primary")]');
+    try {
+        await accountLink.waitFor({ state: 'visible', timeout: 10000 });
+        await expect(accountLink).toBeVisible();
+        } catch (error) {
+        console.error("Element not found or not visible");
+        console.log(await this.page.content()); 
+         await this.page.screenshot({ path: 'error.png', fullPage: true });
+        throw error; 
+        }
     }
 
     async discoverOurBrands(){

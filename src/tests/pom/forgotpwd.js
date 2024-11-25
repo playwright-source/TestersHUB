@@ -40,6 +40,10 @@ class Forgotpwd {
         await this.page.locator("//button[@name='EditMessage']").click();
         await this.page.fill('//input[@id="Current Password"]', 'Test@123');
         await this.page.locator("//button[@name='CHANGE']").click(); 
+        const popup1 = await this.page.locator('div.relative.px-4.w-full.max-w-2xl.h-fullborder.border-neutral-200.inline-block.h-auto');
+        await popup1.waitFor({ state: 'visible' });
+        const closeButton1 = await this.page.locator('button.text-gray-400.bg-transparent.hover\\:bg-gray-200.hover\\:text-gray-900.rounded-lg.text-sm.p-1\\.5.ml-auto.inline-flex.items-center svg.w-5.h-5');
+        await closeButton1.click();
     }
 
 }
