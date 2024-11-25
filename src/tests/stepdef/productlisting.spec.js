@@ -18,3 +18,7 @@ Then ('All products belonging to the {string} category should be displayed', asy
       const isCorrect = await productPage.verifyPageTitleContainsCategory(categoryName);
       expect(isCorrect).toBe.true;
 });
+
+Given('User click on product: {string} in search result', async function (item) {
+        await this.plp.clickAnyItem(item)
+  });
